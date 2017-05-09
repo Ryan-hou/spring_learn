@@ -2,7 +2,11 @@ package com.github.ryan.ioc;
 
 import com.github.ryan.ioc.factory.AutowireCapableBeanFactory;
 import com.github.ryan.ioc.factory.BeanFactory;
+import com.github.ryan.ioc.io.ResourceLoader;
+import com.github.ryan.ioc.xml.XmlBeanDefinitionReader;
 import org.junit.Test;
+
+import java.util.Map;
 
 /**
  * @author ryan.houyl@gmail.com
@@ -14,23 +18,39 @@ public class BeanFactoryTest {
 
     @Test
     public void test() throws Exception {
-        // 1:初始化BeanFactory
-        BeanFactory beanFactory = new AutowireCapableBeanFactory();
 
-        // 2:bean 的定义
-        BeanDefinition beanDefinition = new BeanDefinition();
-        beanDefinition.setBeanClassName("com.github.ryan.ioc.HelloWorldService");
+        // 1:读取配置
+        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
+        xmlBeanDefinitionReader.loadBeanDefinitions("simpleioc.xml");
 
-        // 3:设置属性
-        PropertyValues propertyValues = new PropertyValues();
-        propertyValues.addPropertyValue(new PropertyValue("text", "Hello World!"));
-        beanDefinition.setPropertyValues(propertyValues);
+        // 2:初始化 BeanFactory 并注册bean
+        BeanFactory factory = new AutowireCapableBeanFactory();
+        for (Map.Entry<String, BeanDefinition> beanDefinitionEntry :
+                xmlBeanDefinitionReader.getRegistry().entrySet()) {
+            factory.registerBeanDefinition(beanDefinitionEntry.getKey(), beanDefinitionEntry.getValue());
+        }
 
-        // 4:生成bean
-        beanFactory.registerBeanDefinition("helloWorldService", beanDefinition);
+        // 3:获取bean
+        HelloWorldService helloWorldServie = (HelloWorldService) factory.getBean("helloWorldService");
+        helloWorldServie.helloWorld();
 
-        // 5:获取bean
-        HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
-        helloWorldService.helloWorld();
+//        // 1:初始化BeanFactory
+//        BeanFactory beanFactory = new AutowireCapableBeanFactory();
+//
+//        // 2:bean 的定义
+//        BeanDefinition beanDefinition = new BeanDefinition();
+//        beanDefinition.setBeanClassName("com.github.ryan.ioc.HelloWorldService");
+//
+//        // 3:设置属性
+//        PropertyValues propertyValues = new PropertyValues();
+//        propertyValues.addPropertyValue(new PropertyValue("text", "Hello World!"));
+//        beanDefinition.setPropertyValues(propertyValues);
+//
+//        // 4:生成bean
+//        beanFactory.registerBeanDefinition("helloWorldService", beanDefinition);
+//
+//        // 5:获取bean
+//        HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
+//        helloWorldService.helloWorld();
     }
 }

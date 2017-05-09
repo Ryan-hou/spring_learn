@@ -1,8 +1,5 @@
 package com.github.ryan.ioc;
 
-import com.github.ryan.ioc.PropertyValue;
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.List;
 
