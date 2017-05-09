@@ -1,5 +1,7 @@
 package com.github.ryan.ioc;
 
+import lombok.Setter;
+
 /**
  * @author ryan.houyl@gmail.com
  * @description:
@@ -8,7 +10,10 @@ package com.github.ryan.ioc;
  */
 public class HelloWorldService {
 
+    @Setter
+    private String text;
+
     public void helloWorld() {
-        System.out.println("Hello World!");
+        System.out.println(text);
     }
 }

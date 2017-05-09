@@ -5,7 +5,7 @@ import lombok.Setter;
 
 /**
  * @author ryan.houyl@gmail.com
- * @description: 解决 Bean 的具体定义问题
+ * @description bean的内容及元数据，保存在BeanFactory中，包装bean的实体
  * @className: BeanDefinition
  * @date May 08,2017
  */
@@ -19,6 +19,9 @@ public class BeanDefinition {
 
     @Getter
     private String beanClassName;
+
+    @Setter @Getter
+    private PropertyValues propertyValues;
 
     public void setBeanClassName(String beanClassName) {
         this.beanClassName = beanClassName;

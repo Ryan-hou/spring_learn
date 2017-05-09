@@ -13,17 +13,23 @@ import org.junit.Test;
 public class BeanFactoryTest {
 
     @Test
-    public void test() {
+    public void test() throws Exception {
         // 1:初始化BeanFactory
         BeanFactory beanFactory = new AutowireCapableBeanFactory();
 
-        // 2:注入Bean
-//        BeanDefinition beanDefinition = new BeanDefinition(new HelloWorldService());
+        // 2:bean 的定义
         BeanDefinition beanDefinition = new BeanDefinition();
         beanDefinition.setBeanClassName("com.github.ryan.ioc.HelloWorldService");
+
+        // 3:设置属性
+        PropertyValues propertyValues = new PropertyValues();
+        propertyValues.addPropertyValue(new PropertyValue("text", "Hello World!"));
+        beanDefinition.setPropertyValues(propertyValues);
+
+        // 4:生成bean
         beanFactory.registerBeanDefinition("helloWorldService", beanDefinition);
 
-        // 3:获取Bean
+        // 5:获取bean
         HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
         helloWorldService.helloWorld();
     }
