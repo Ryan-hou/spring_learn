@@ -5,6 +5,11 @@
 
     <bean name="helloWorldService" class="com.github.ryan.ioc.HelloWorldService">
         <property name="text" value="Hello World!"></property>
+        <property name="outputService" ref="outputService"></property>
+    </bean>
+
+    <bean name="outputService" class="com.github.ryan.ioc.OutputService">
+        <property name="helloWorldService" ref="helloWorldService" />
     </bean>
 
 </beans>

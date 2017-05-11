@@ -1,6 +1,7 @@
 package com.github.ryan.ioc.factory;
 
 import com.github.ryan.ioc.BeanDefinition;
+import com.github.ryan.ioc.BeanReference;
 import com.github.ryan.ioc.PropertyValue;
 
 import java.lang.reflect.Field;
@@ -16,6 +17,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
     @Override
     protected Object doCreateBean(BeanDefinition beanDefinition) throws Exception {
         Object bean = createBeanInstance(beanDefinition);
+        beanDefinition.setBean(bean);
         applyPropertyValues(bean, beanDefinition);
         return bean;
     }
@@ -29,7 +31,12 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
             Field declaredField = bean.getClass().getDeclaredField(propertyValue.getName());
             declaredField.setAccessible(true);
             // Spring本身使用了setter来进行注入，这里为了代码简洁，我们使用Field的形式来注入。
-            declaredField.set(bean, propertyValue.getValue());
+            Object value = propertyValue.getValue();
+            if (value instanceof BeanReference) {
+               BeanReference beanReference = (BeanReference) value;
+               value = getBean(beanReference.getName());
+            }
+            declaredField.set(bean, value);
         }
     }
 }
