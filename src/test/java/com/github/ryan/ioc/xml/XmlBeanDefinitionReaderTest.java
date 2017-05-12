@@ -10,9 +10,9 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 /**
- * @author yanlin.hou@ucarinc.com
+ * @author ryan.houyl@gmail.com
  * @description:
- * @className: ${name}
+ * @className: XmlBeanDefinitionReaderTest
  * @date May 09,2017
  */
 public class XmlBeanDefinitionReaderTest {

@@ -12,5 +12,5 @@ public interface BeanFactory {
 
     Object getBean(String name) throws Exception;
 
-    void registerBeanDefinition(String name, BeanDefinition definition) throws Exception;
+    // void registerBeanDefinition(String name, BeanDefinition definition) throws Exception;
 }

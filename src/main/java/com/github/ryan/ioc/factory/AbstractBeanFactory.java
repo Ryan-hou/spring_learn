@@ -32,7 +32,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         return bean;
     }
 
-    @Override
+    // @Override
     public void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception {
         //Object bean = doCreateBean(beanDefinition);
         //beanDefinition.setBean(bean);

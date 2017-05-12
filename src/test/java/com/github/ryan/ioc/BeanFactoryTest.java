@@ -60,19 +60,19 @@ public class BeanFactoryTest {
     public void test() throws Exception {
 
         // 1:读取配置
-        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
-        xmlBeanDefinitionReader.loadBeanDefinitions("simpleioc.xml");
-
-        // 2:初始化 BeanFactory 并注册bean
-        BeanFactory factory = new AutowireCapableBeanFactory();
-        for (Map.Entry<String, BeanDefinition> beanDefinitionEntry :
-                xmlBeanDefinitionReader.getRegistry().entrySet()) {
-            factory.registerBeanDefinition(beanDefinitionEntry.getKey(), beanDefinitionEntry.getValue());
-        }
-
-        // 3:获取bean
-        HelloWorldService helloWorldServie = (HelloWorldService) factory.getBean("helloWorldService");
-        helloWorldServie.helloWorld();
+//        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
+//        xmlBeanDefinitionReader.loadBeanDefinitions("simpleioc.xml");
+//
+//        // 2:初始化 BeanFactory 并注册bean
+//        BeanFactory factory = new AutowireCapableBeanFactory();
+//        for (Map.Entry<String, BeanDefinition> beanDefinitionEntry :
+//                xmlBeanDefinitionReader.getRegistry().entrySet()) {
+//            factory.registerBeanDefinition(beanDefinitionEntry.getKey(), beanDefinitionEntry.getValue());
+//        }
+//
+//        // 3:获取bean
+//        HelloWorldService helloWorldServie = (HelloWorldService) factory.getBean("helloWorldService");
+//        helloWorldServie.helloWorld();
 
 // **************************************************************************
 
