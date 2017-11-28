@@ -1,10 +1,9 @@
-package com.github.ryan.ioc;
+package com.github.ryan.beans;
 
-import com.github.ryan.ioc.factory.AbstractBeanFactory;
-import com.github.ryan.ioc.factory.AutowireCapableBeanFactory;
-import com.github.ryan.ioc.factory.BeanFactory;
-import com.github.ryan.ioc.io.ResourceLoader;
-import com.github.ryan.ioc.xml.XmlBeanDefinitionReader;
+import com.github.ryan.beans.factory.AbstractBeanFactory;
+import com.github.ryan.beans.factory.AutowireCapableBeanFactory;
+import com.github.ryan.beans.io.ResourceLoader;
+import com.github.ryan.beans.xml.XmlBeanDefinitionReader;
 import org.junit.Test;
 
 import java.util.Map;
@@ -81,7 +80,7 @@ public class BeanFactoryTest {
 //
 //        // 2:bean 的定义
 //        BeanDefinition beanDefinition = new BeanDefinition();
-//        beanDefinition.setBeanClassName("com.github.ryan.ioc.HelloWorldService");
+//        beanDefinition.setBeanClassName("com.github.ryan.beans.HelloWorldService");
 //
 //        // 3:设置属性
 //        PropertyValues propertyValues = new PropertyValues();

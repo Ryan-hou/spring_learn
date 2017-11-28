@@ -1,4 +1,4 @@
-package com.github.ryan.ioc;
+package com.github.ryan.beans;
 
 import lombok.Setter;
 import org.junit.Assert;

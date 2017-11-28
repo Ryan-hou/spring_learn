@@ -22,6 +22,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!--aop-->
+    <dependency>
+      <groupId>aopalliance</groupId>
+      <artifactId>aopalliance</artifactId>
+      <version>1.0</version>
+    </dependency>
+
     <!--lombok-->
     <dependency>
       <groupId>org.projectlombok</groupId>

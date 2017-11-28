@@ -1,4 +1,4 @@
-package com.github.ryan.ioc;
+package com.github.ryan;
 
 import lombok.Getter;
 import lombok.Setter;

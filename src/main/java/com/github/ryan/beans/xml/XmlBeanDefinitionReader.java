@@ -1,10 +1,10 @@
-package com.github.ryan.ioc.xml;
+package com.github.ryan.beans.xml;
 
-import com.github.ryan.ioc.AbstractBeanDefinitionReader;
-import com.github.ryan.ioc.BeanDefinition;
-import com.github.ryan.ioc.BeanReference;
-import com.github.ryan.ioc.PropertyValue;
-import com.github.ryan.ioc.io.ResourceLoader;
+import com.github.ryan.beans.AbstractBeanDefinitionReader;
+import com.github.ryan.beans.BeanDefinition;
+import com.github.ryan.BeanReference;
+import com.github.ryan.beans.PropertyValue;
+import com.github.ryan.beans.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

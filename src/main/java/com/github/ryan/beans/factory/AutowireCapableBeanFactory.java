@@ -1,8 +1,8 @@
-package com.github.ryan.ioc.factory;
+package com.github.ryan.beans.factory;
 
-import com.github.ryan.ioc.BeanDefinition;
-import com.github.ryan.ioc.BeanReference;
-import com.github.ryan.ioc.PropertyValue;
+import com.github.ryan.beans.BeanDefinition;
+import com.github.ryan.BeanReference;
+import com.github.ryan.beans.PropertyValue;
 
 import java.lang.reflect.Field;
 

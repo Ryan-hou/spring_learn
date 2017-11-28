@@ -1,4 +1,4 @@
-package com.github.ryan.ioc.io;
+package com.github.ryan.beans.io;
 
 import java.io.InputStream;
 import java.net.URL;

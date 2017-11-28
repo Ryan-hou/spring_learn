@@ -1,6 +1,4 @@
-package com.github.ryan.ioc.factory;
-
-import com.github.ryan.ioc.BeanDefinition;
+package com.github.ryan.beans.factory;
 
 /**
  * @author ryan.houyl@gmail.com

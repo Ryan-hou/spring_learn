@@ -1,13 +1,11 @@
-package com.github.ryan.ioc.xml;
+package com.github.ryan.beans.xml;
 
-import com.github.ryan.ioc.BeanDefinition;
-import com.github.ryan.ioc.io.ResourceLoader;
+import com.github.ryan.beans.BeanDefinition;
+import com.github.ryan.beans.io.ResourceLoader;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Map;
-
-import static org.junit.Assert.*;
 
 /**
  * @author ryan.houyl@gmail.com

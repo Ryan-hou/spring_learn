@@ -1,10 +1,10 @@
-package com.github.ryan.ioc.context;
+package com.github.ryan.context;
 
-import com.github.ryan.ioc.BeanDefinition;
-import com.github.ryan.ioc.factory.AbstractBeanFactory;
-import com.github.ryan.ioc.factory.AutowireCapableBeanFactory;
-import com.github.ryan.ioc.io.ResourceLoader;
-import com.github.ryan.ioc.xml.XmlBeanDefinitionReader;
+import com.github.ryan.beans.BeanDefinition;
+import com.github.ryan.beans.factory.AbstractBeanFactory;
+import com.github.ryan.beans.factory.AutowireCapableBeanFactory;
+import com.github.ryan.beans.io.ResourceLoader;
+import com.github.ryan.beans.xml.XmlBeanDefinitionReader;
 
 import java.util.Map;
 

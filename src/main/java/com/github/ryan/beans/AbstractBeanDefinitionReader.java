@@ -1,6 +1,6 @@
-package com.github.ryan.ioc;
+package com.github.ryan.beans;
 
-import com.github.ryan.ioc.io.ResourceLoader;
+import com.github.ryan.beans.io.ResourceLoader;
 import lombok.Getter;
 
 import java.util.HashMap;

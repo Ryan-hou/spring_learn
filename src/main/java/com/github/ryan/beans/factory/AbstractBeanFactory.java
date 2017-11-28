@@ -1,6 +1,6 @@
-package com.github.ryan.ioc.factory;
+package com.github.ryan.beans.factory;
 
-import com.github.ryan.ioc.BeanDefinition;
+import com.github.ryan.beans.BeanDefinition;
 
 import java.util.ArrayList;
 import java.util.List;

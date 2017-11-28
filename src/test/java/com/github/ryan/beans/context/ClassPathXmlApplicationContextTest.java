@@ -1,6 +1,8 @@
-package com.github.ryan.ioc.context;
+package com.github.ryan.beans.context;
 
-import com.github.ryan.ioc.HelloWorldService;
+import com.github.ryan.beans.HelloWorldService;
+import com.github.ryan.context.ApplicationContext;
+import com.github.ryan.context.ClassPathXmlApplicationContext;
 import org.junit.Test;
 
 /**

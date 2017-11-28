@@ -1,4 +1,4 @@
-package com.github.ryan.ioc;
+package com.github.ryan.beans;
 
 /**
  * @author ryan.houyl@gmail.com

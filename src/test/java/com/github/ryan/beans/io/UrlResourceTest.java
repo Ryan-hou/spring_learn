@@ -1,11 +1,9 @@
-package com.github.ryan.ioc.io;
+package com.github.ryan.beans.io;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.InputStream;
-
-import static org.junit.Assert.*;
 
 /**
  * @author ryan.houyl@gmail.com

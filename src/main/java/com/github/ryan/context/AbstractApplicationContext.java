@@ -1,6 +1,6 @@
-package com.github.ryan.ioc.context;
+package com.github.ryan.context;
 
-import com.github.ryan.ioc.factory.AbstractBeanFactory;
+import com.github.ryan.beans.factory.AbstractBeanFactory;
 
 /**
  * @author ryan.houyl@gmail.com
