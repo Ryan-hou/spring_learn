@@ -7,4 +7,6 @@ package com.github.ryan;
  * @date November 30,2017
  */
 public interface HelloWorldService {
+
+    void helloWorld();
 }
