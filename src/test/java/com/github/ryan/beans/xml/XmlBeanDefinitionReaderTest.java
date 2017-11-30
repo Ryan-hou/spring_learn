@@ -1,6 +1,6 @@
 package com.github.ryan.beans.xml;
 
-import com.github.ryan.beans.BeanDefinition;
+import com.github.ryan.BeanDefinition;import com.github.ryan.BeanDefinition;
 import com.github.ryan.beans.io.ResourceLoader;
 import org.junit.Assert;
 import org.junit.Test;

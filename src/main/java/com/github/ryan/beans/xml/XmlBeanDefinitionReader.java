@@ -1,9 +1,9 @@
 package com.github.ryan.beans.xml;
 
-import com.github.ryan.beans.AbstractBeanDefinitionReader;
-import com.github.ryan.beans.BeanDefinition;
+import com.github.ryan.BeanDefinition;import com.github.ryan.AbstractBeanDefinitionReader;
+import com.github.ryan.BeanDefinition;
 import com.github.ryan.BeanReference;
-import com.github.ryan.beans.PropertyValue;
+import com.github.ryan.PropertyValue;
 import com.github.ryan.beans.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
