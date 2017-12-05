@@ -11,12 +11,15 @@ import lombok.Getter;
 public class TargetSource {
 
     @Getter
-    private Class[] targetClass;
+    private Class<?>[] interfaces;
+    @Getter
+    private Class<?> targetClass;
     @Getter
     private Object target;
 
-    public TargetSource(Class[] targetClass, Object target) {
-        this.targetClass = targetClass;
+    public TargetSource(Object target, Class<?> targetClass, Class<?>... interfaces) {
         this.target = target;
+        this.targetClass = targetClass;
+        this.interfaces = interfaces;
     }
 }
