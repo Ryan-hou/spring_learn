@@ -7,13 +7,22 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
-    <bean name="helloWorldService" class="com.github.ryan.HelloWorldServiceImpl">
+    <bean id="helloWorldService" class="com.github.ryan.HelloWorldServiceImpl">
         <property name="text" value="Hello World!"></property>
         <property name="outputService" ref="outputService"></property>
     </bean>
 
-    <bean name="outputService" class="com.github.ryan.OutputService">
-        <property name="helloWorldService" ref="helloWorldService" />
+    <bean id="outputService" class="com.github.ryan.OutputServiceImpl">
+        <!--<property name="helloWorldService" ref="helloWorldService" />-->
+    </bean>
+
+    <bean id="timeInterceptor" class="com.github.ryan.aop.TimerInterceptor" />
+
+    <bean id="autoProxyCreator" class="com.github.ryan.aop.AspectJAwareAdvisorProxyCreator" />
+
+    <bean id="apectjAspect" class="com.github.ryan.aop.AspectJExpressionPointcutAdvisor">
+        <property name="advice" ref="timeInterceptor" />
+        <property name="expression" value="execution(* com.github.ryan.*.*(..))" />
     </bean>
 
 </beans>

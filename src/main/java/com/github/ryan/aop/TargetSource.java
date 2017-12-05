@@ -11,11 +11,11 @@ import lombok.Getter;
 public class TargetSource {
 
     @Getter
-    private Class targetClass;
+    private Class[] targetClass;
     @Getter
     private Object target;
 
-    public TargetSource(Class targetClass, Object target) {
+    public TargetSource(Class[] targetClass, Object target) {
         this.targetClass = targetClass;
         this.target = target;
     }

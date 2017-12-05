@@ -16,8 +16,8 @@ public class AspectJExpressionPointcutAdvisor implements PointcutAdvisor {
     @Setter
     private Advice advice;
 
-    public void setExprssion(String exprssion) {
-        this.pointcut.setExpression(exprssion);
+    public void setExpression(String expression) {
+        this.pointcut.setExpression(expression);
     }
 
     @Override

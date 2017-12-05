@@ -17,4 +17,7 @@ public class AdvisedSupport {
     // Advice: interceptor type
     @Getter @Setter
     private MethodInterceptor methodInterceptor;
+
+    @Getter @Setter
+    private MethodMatcher methodMatcher;
 }
