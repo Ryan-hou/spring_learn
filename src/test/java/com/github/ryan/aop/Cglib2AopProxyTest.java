@@ -1,5 +1,6 @@
 package com.github.ryan.aop;
 
+import com.github.ryan.AopTestService;
 import com.github.ryan.HelloWorldService;
 import com.github.ryan.context.ApplicationContext;
 import com.github.ryan.context.ClassPathXmlApplicationContext;
@@ -16,7 +17,9 @@ public class Cglib2AopProxyTest {
     @Test
     public void testInterceptor() throws Exception {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("simpleioc.xml");
-        HelloWorldService helloWorldService = (HelloWorldService) applicationContext.getBean("helloWorldService");
-        helloWorldService.helloWorld();
+        //HelloWorldService helloWorldService = (HelloWorldService) applicationContext.getBean("helloWorldService");
+        //helloWorldService.helloWorld();
+        AopTestService aopTestService = (AopTestService) applicationContext.getBean("aopTestService");
+        aopTestService.say();
     }
 }

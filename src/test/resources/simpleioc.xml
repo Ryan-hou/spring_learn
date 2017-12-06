@@ -12,6 +12,10 @@
         <property name="outputService" ref="outputService"></property>
     </bean>
 
+    <bean id="aopTestService" class="com.github.ryan.AopTestService">
+        <property name="text" value="Hello AOP!" />
+    </bean>
+
     <bean id="outputService" class="com.github.ryan.OutputServiceImpl">
         <!--<property name="helloWorldService" ref="helloWorldService" />-->
     </bean>
