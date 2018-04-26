@@ -13,12 +13,14 @@ import java.util.List;
  */
 public abstract class AbstractApplicationContext implements ApplicationContext {
 
+    // 代理模式，beanFactory 用来进行方法转发
     protected AbstractBeanFactory beanFactory;
 
     public AbstractApplicationContext(AbstractBeanFactory beanFactory) {
         this.beanFactory = beanFactory;
     }
 
+    // 模版方法模式
     protected void refresh() throws Exception {
         loadBeanDefinitions(beanFactory);
         registerBeanPostProcessors(beanFactory);

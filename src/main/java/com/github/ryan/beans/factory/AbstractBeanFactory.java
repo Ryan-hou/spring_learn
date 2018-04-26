@@ -22,6 +22,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 
     private List<BeanPostProcessor> beanPostProcessors = new ArrayList<>();
 
+    // 使用模版方法模式：getBean方法控制算法流程，保留扩展点给相应的子类实现
     @Override
     public Object getBean(String name) throws Exception {
         BeanDefinition beanDefinition = beanDefinitionMap.get(name);
@@ -65,6 +66,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 
     /**
      * 初始化Bean
+     * 总是先创建bean实例，后注入属性，所以不会出现 A-B-A 这种循环依赖带来的问题
      * @param beanDefinition
      * @return
      */
@@ -79,6 +81,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         return beanDefinition.getBeanClass().newInstance();
     }
 
+    // 钩子方法，由子类提供具体的属性注入实现
     protected abstract void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws Exception;
 
     public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor) {

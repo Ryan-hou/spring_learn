@@ -33,7 +33,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
             ((BeanFactoryAware) bean).setBeanFactory(this);
         }
 
-        for (PropertyValue propertyValue : mbd.getPropertyValues().getPropertyValues()) {
+        for (PropertyValue propertyValue : mbd.getPropertyValues().propertyValues()) {
 //            Field declaredField = bean.getClass().getDeclaredField(propertyValue.getName());
 //            declaredField.setAccessible(true);
 //            // Spring本身使用了setter来进行注入，这里为了代码简洁，我们使用Field的形式来注入。
