@@ -7,6 +7,7 @@ import org.aopalliance.intercept.MethodInvocation;
  * @author ryan.houyl@gmail.com
  * @description: 通过Interceptor实现AOP的advice
  * @className: TimerInterceptor
+ * Advice -> Interceptor -> MethodInterceptor(Object invoke(MethodInvocation invocation)) -> TimerInterceptor
  * @date November 30,2017
  */
 public class TimerInterceptor implements MethodInterceptor {

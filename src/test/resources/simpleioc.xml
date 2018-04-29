@@ -26,6 +26,7 @@
 
     <bean id="apectjAspect" class="com.github.ryan.aop.AspectJExpressionPointcutAdvisor">
         <property name="advice" ref="timeInterceptor" />
+        <!--AspectJ pointcut Expression-->
         <property name="expression" value="execution(* com.github.ryan.*.*(..))" />
     </bean>
 

@@ -8,6 +8,7 @@ package com.github.ryan.aop;
  */
 public interface ClassFilter {
 
+    // 判断是否对某个对象进行拦截
     boolean matches(Class targetClass);
 
 }

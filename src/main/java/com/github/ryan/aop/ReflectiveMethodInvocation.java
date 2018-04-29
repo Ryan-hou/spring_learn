@@ -7,7 +7,9 @@ import java.lang.reflect.Method;
 
 /**
  * @author ryan.houyl@gmail.com
- * @description: 基于方法级别的aop，抽象Joinpoint的实现
+ * @description:
+ * 基于方法级别的aop，抽象Joinpoint的实现
+ * Joinpoint -> Invocation -> MethodInvocation -> ReflectiveMethodInvocation
  * @className: ReflectiveMethodInvocation
  * @date November 30,2017
  */

@@ -6,7 +6,7 @@ import org.aopalliance.intercept.MethodInterceptor;
 
 /**
  * @author ryan.houyl@gmail.com
- * @description: 代理相关的原数据
+ * @description: 代理相关的元数据
  * @className: AdvisedSupport
  * @date November 30,2017
  */

@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
  */
 public interface MethodMatcher {
 
+    // 判断是否对某个对象的某个方法进行拦截
     boolean matches(Method method, Class targetClass);
 
 }

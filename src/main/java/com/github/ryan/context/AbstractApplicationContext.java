@@ -30,6 +30,7 @@ public abstract class AbstractApplicationContext implements ApplicationContext {
     protected abstract void loadBeanDefinitions(AbstractBeanFactory beanFactory) throws Exception;
 
     protected void registerBeanPostProcessors(AbstractBeanFactory beanFactory) throws Exception {
+        // 实现了 BeanPostProcessor 接口的bean，在实例化所有的 Bean 前，最先被实例化
         List<Object> beanPostProcessors = (List<Object>) beanFactory.getBeansForType(BeanPostProcessor.class);
         for (Object beanPostProcessor : beanPostProcessors) {
             beanFactory.addBeanPostProcessor((BeanPostProcessor) beanPostProcessor);

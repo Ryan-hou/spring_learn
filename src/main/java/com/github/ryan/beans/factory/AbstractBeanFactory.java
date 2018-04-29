@@ -23,6 +23,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
     private List<BeanPostProcessor> beanPostProcessors = new ArrayList<>();
 
     // 使用模版方法模式：getBean方法控制算法流程，保留扩展点给相应的子类实现
+    // 主要包含实例化(创建实例，注入属性包括依赖注入，处理BeanFactoryAware)和初始化操作
     @Override
     public Object getBean(String name) throws Exception {
         BeanDefinition beanDefinition = beanDefinitionMap.get(name);
@@ -58,6 +59,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         beanDefinitionNames.add(name);
     }
 
+    // 以单例方式初始化所有的bean，目前只支持单例模式
     public void preInstantiateSingletons() throws Exception {
         for (String beanName : this.beanDefinitionNames) {
             getBean(beanName);
