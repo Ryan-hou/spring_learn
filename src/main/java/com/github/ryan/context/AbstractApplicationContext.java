@@ -21,6 +21,7 @@ public abstract class AbstractApplicationContext implements ApplicationContext {
     }
 
     // 模版方法模式
+    // 实例化顺序：实现BeanPostProcessor 接口的bean -> PointcutAdvisor(在BeanPostProcessor接口的方法中实例化) -> 普通的bean
     protected void refresh() throws Exception {
         loadBeanDefinitions(beanFactory);
         registerBeanPostProcessors(beanFactory);
@@ -30,7 +31,8 @@ public abstract class AbstractApplicationContext implements ApplicationContext {
     protected abstract void loadBeanDefinitions(AbstractBeanFactory beanFactory) throws Exception;
 
     protected void registerBeanPostProcessors(AbstractBeanFactory beanFactory) throws Exception {
-        // 实现了 BeanPostProcessor 接口的bean，在实例化所有的 Bean 前，最先被实例化
+        // 实现了 BeanPostProcessor 接口的bean，在实例化所有的 Bean 前，最先被实例化，
+        // 这样就保证了普通的bean可以被正常的初始化
         List<Object> beanPostProcessors = (List<Object>) beanFactory.getBeansForType(BeanPostProcessor.class);
         for (Object beanPostProcessor : beanPostProcessors) {
             beanFactory.addBeanPostProcessor((BeanPostProcessor) beanPostProcessor);

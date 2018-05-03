@@ -44,11 +44,12 @@ public class AspectJAwareAdvisorProxyCreator implements BeanPostProcessor, BeanF
         // 加载 BeanFactory 中所有的 PointcutAdvisor（这也保证了 PointcutAdvisor 的实例化顺序优于普通 Bean
         // 然后依次使用 PointcutAdvisor 内置的 ClassFilter，判断当前对象是不是要拦截的类。
         // 如果是，则生成一个 TargetSource（要拦截的对象和其类型），并取出 AutoProxyCreator 的 MethodMatcher（对哪些方法进行拦截）、
-        // Advice（拦截的具体操作），再，交给 AopProxy 去生成代理对象。
+        // Advice（拦截的具体操作），再交给 AopProxy 去生成代理对象。
         List<AspectJExpressionPointcutAdvisor> advisors = (List<AspectJExpressionPointcutAdvisor>) beanFactory
                 .getBeansForType(AspectJExpressionPointcutAdvisor.class);
         for (AspectJExpressionPointcutAdvisor advisor : advisors) {
             if (advisor.getPointcut().getClassFilter().matches(bean.getClass())) {
+                // advisedSupport 需要提供代理相关的元数据：targetSource／methodInterceptor／methodMatcher
                 ProxyFactory advisedSupport = new ProxyFactory();
                 //AdvisedSupport advisedSupport = new AdvisedSupport();
                 advisedSupport.setMethodInterceptor((MethodInterceptor) advisor.getAdvice());

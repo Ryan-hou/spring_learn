@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 /**
  * @author ryan.houyl@gmail.com
  * @description:
- * DK动态代理只能对接口进行代理，对于类则无能为力。这里我们需要一些字节码操作技术。
+ * JDK动态代理只能对接口进行代理，对于类则无能为力。这里我们需要一些字节码操作技术。
  * 这方面大概有几种选择：ASM，CGLib和javassist，后两者是对ASM的封装。Spring中使用了CGLib。
  *
  * @className: Cglib2AopProxy

@@ -6,7 +6,8 @@ import lombok.Getter;
  * @author ryan.houyl@gmail.com
  * @description:
  * 用于bean的属性注入
- * 实际上是k-v键值对，通过 PropertyValue 类封装，赋予明确的语义
+ * 实际上是k-v键值对，通过 PropertyValue 类封装，相比直接使用Map，赋予了更明确的语义
+ *
  * @className: PropertyValue
  * @date May 09,2017
  */

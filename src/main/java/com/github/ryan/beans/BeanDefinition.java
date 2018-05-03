@@ -2,6 +2,7 @@ package com.github.ryan.beans;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author ryan.houyl@gmail.com
@@ -9,6 +10,7 @@ import lombok.Setter;
  * @className: BeanDefinition
  * @date May 08,2017
  */
+@Slf4j
 public class BeanDefinition {
 
     @Getter @Setter
@@ -20,7 +22,7 @@ public class BeanDefinition {
     @Getter
     private String beanClassName;
 
-    @Setter @Getter
+    @Getter
     private PropertyValues propertyValues = new PropertyValues();
 
     public void setBeanClassName(String beanClassName) {
@@ -28,7 +30,7 @@ public class BeanDefinition {
         try {
             this.beanClass = Class.forName(beanClassName);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            log.error("BeanDefinition setBeanClassName error!", e);
         }
     }
 }

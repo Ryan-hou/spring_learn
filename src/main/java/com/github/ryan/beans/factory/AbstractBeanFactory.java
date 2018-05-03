@@ -45,6 +45,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         }
 
         // TODO: call initialize method
+
         for (BeanPostProcessor beanPostProcessor : beanPostProcessors) {
             bean = beanPostProcessor.postProcessAfterInitialization(bean, beanName);
         }
@@ -69,6 +70,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
     /**
      * 初始化Bean
      * 总是先创建bean实例，后注入属性，所以不会出现 A-B-A 这种循环依赖带来的问题
+     *
      * @param beanDefinition
      * @return
      */
@@ -94,7 +96,8 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         List<Object> beans = new ArrayList<>();
         for (String beanDefinitionName : beanDefinitionNames) {
             if (type.isAssignableFrom(beanDefinitionMap.get(beanDefinitionName).getBeanClass())) {
-                beans.add(getBean(beanDefinitionName));
+                Object bean = getBean(beanDefinitionName);
+                beans.add(bean);
             }
         }
         return beans;

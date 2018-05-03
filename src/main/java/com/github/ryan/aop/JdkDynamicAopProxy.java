@@ -8,7 +8,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * @author ryan.houyl@gmail.com
- * @description: 基于jdk的动态代理（代理接口）
+ * @description: 基于jdk的动态代理（代理接口）：使用 Proxy 和 InvocationHandler
  * @className: JdkDynamicAopProxy
  * @date November 30,2017
  */

@@ -29,6 +29,8 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
 //    }
 
     protected void applyPropertyValues(Object bean, BeanDefinition mbd) throws Exception {
+        // BeanFactoryAware 接口提供了对 BeanFactory 的感知，
+        // 这样，尽管它是容器中的一个 Bean，却可以获取容器的引用
         if (bean instanceof BeanFactoryAware) {
             ((BeanFactoryAware) bean).setBeanFactory(this);
         }
@@ -45,6 +47,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
 //            declaredField.set(bean, value);
             Object value = propertyValue.getValue();
             if (value instanceof BeanReference) {
+                // 依赖注入
                 BeanReference beanReference = (BeanReference) value;
                 value = getBean(beanReference.getName());
             }
