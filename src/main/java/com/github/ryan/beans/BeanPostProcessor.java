@@ -1,8 +1,20 @@
 package com.github.ryan.beans;
 
 /**
- * @author ryan.houyl@gmail.com
- * @description:
+ * Factory hook that allows for custom modification of new bean instances,
+ * e.g. checking for marker instances or wrapping them with proxy.
+ *
+ * ApplicationContexts can autodetect BeanPostProcessor beans in their bean definitions
+ * and apply them to any beans subsequently created.
+ * Plain bean factories allow for programmatic registration of post-processors,
+ * applying to all beans created through this factory.
+ *
+ * Typically, post-processors that populate beans via marker interfaces
+ * or the like will implement {@link #postProcessBeforeInitialization(Object, String)},
+ * while post-processors that wrap beans with proxies will normally implement
+ * {@link #postProcessAfterInitialization(Object, String)}
+ *
+ *
  * @className: BeanPostProcessor
  * @date December 04,2017
  */

@@ -34,6 +34,8 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         if (bean == null) {
             bean = doCreateBean(beanDefinition);
             bean = initializeBean(bean, name);
+            // 在 doCreateBean 中已经赋值过一次了，这里需要再赋值一次
+            // 因此 initializeBean 方法返回之后，该bean可能已经变了(比如返回代理实现类)
             beanDefinition.setBean(bean);
         }
         return bean;
@@ -69,7 +71,9 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 
     /**
      * 初始化Bean
-     * 总是先创建bean实例，后注入属性，所以不会出现 A-B-A 这种循环依赖带来的问题
+     * 总是先创建bean实例，然后把bean实例通过beanDefinition暴露给IoC容器
+     * 然后再注入属性（依赖注入时需要递归调用getBean），所以不会出现 A-B-A 这种循环依赖带来的问题
+     * （不严谨，如果在构造方法中注入bean，反射调用时还会出现循环依赖）
      *
      * @param beanDefinition
      * @return
